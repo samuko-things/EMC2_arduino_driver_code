@@ -53,7 +53,7 @@ void readEncoderA() {
   encA.oldFreqTime = micros();
   encA.checkFreqTime = micros();
 
-  if (digitalRead(encA.dirPin) > 0) {
+  if (digitalRead(encA.dirPin) == 0) {
     encA.tickCount += 1;
     encA.frequency = encA.freqPerTick / (float)encA.pulsePerRev;
   } else {
@@ -68,7 +68,7 @@ void readEncoderB() {
   encB.oldFreqTime = micros();
   encB.checkFreqTime = micros();
 
-  if (digitalRead(encB.dirPin) > 0) {
+  if (digitalRead(encB.dirPin) == 0) {
     encB.tickCount += 1;
     encB.frequency = encB.freqPerTick / (float)encB.pulsePerRev;
   } else {
